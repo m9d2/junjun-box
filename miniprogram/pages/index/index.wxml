@@ -6,7 +6,7 @@
     <van-tab title="实用工具">
       <view class="content">
         <van-grid border="{{ false }}" animated swipeable custom-class="grid" clickable>
-          <van-grid-item text-class="grid-item-text" wx:for="{{ tools }}" url="{{ item.url }}" icon="{{ item.icon }}" text="{{ item.title }}"/>
+          <van-grid-item text-class="grid-item-text" wx:key="key" wx:for="{{ tools }}" url="{{ item.url }}" icon="{{ item.icon }}" text="{{ item.title }}"/>
         </van-grid>
       </view>
     </van-tab>

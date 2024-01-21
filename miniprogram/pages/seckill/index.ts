@@ -39,14 +39,12 @@ Page({
         util.request({
           data: { url: '/api/getGoodsList', method: 'POST', token: res.data, data: '{"type": 1,"apiListId": 3,"goods_num": 200}' },
           success: (res: any) => {
-            console.log(res[0].list)
             that.setData({
               goods: res[0].list,
             })
           }
         })
       }
-
     })
     wx.getStorage({
       key: "address",
@@ -89,21 +87,20 @@ Page({
       }
     })
     wx.stopPullDownRefresh({
-      success: (res) => { },
+      success: () => { },
     })
   },
 
+  /**
+   * 选择地址
+   */
   changeAddress() {
-    let addressJson: any[] = []
     let that = this
     util.request({
       data: { url: '/api/exchange-gift/address-list?page_size=10&page=1', method: 'GET', token: this.data.token, data: '' },
       success: (res: any) => {
-        addressJson = res.list
-        let addressArray = []
-        addressJson.forEach(element => {
-          addressArray.push(element.address)
-        });
+        let addressJson = res.list
+        const addressArray = addressJson.map((element: { address: any; }) => element.address)
         that.setData({
           addressJson: addressJson,
           addressArray: addressArray,
@@ -113,21 +110,32 @@ Page({
     })
   },
 
+  /**
+   * 确认选择地址
+   * @param res 
+   */
   onConfirmAddress(res: any) {
-    let address = this.data.addressJson[res.detail.index]
+    let address: any = this.data.addressJson[res.detail.index]
     this.setData({
       address: address.address,
       addressId: address.id,
+      showPopup: false,
     })
     wx.setStorageSync("address", address.address)
     wx.setStorageSync("address_id", address.id)
-    this.setData({ showPopup: false });
   },
 
+  /**
+   * 取消选择地址
+   */
   onCancelAddress() {
     this.setData({ showPopup: false });
   },
 
+  /**
+   * 
+   * @param event 
+   */
   onChangeChecked(event: any) {
     this.setData({
       checked: event.detail,
@@ -143,19 +151,22 @@ Page({
 
   noop() { },
 
+  /**
+   * 立即兑换
+   */
   exchange() {
     let data = {
       address_id: this.data.addressId,
       is_cart: 0,
       is_subscribe: 1,
-      product: []
+      product: [] as any[]
     }
     this.data.checked.forEach(element => {
       data.product.push({ sku_id: element, num: 1 })
     })
     util.request({
       data: { url: '/api/exchange-gift/ordinary/order-submit', method: 'POST', token: this.data.token, data: data },
-      success: (res: any) => {
+      success: () => {
         wx.showToast({
           title: "兑换成功！",
           icon: "success"

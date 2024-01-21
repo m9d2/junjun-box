@@ -12,7 +12,7 @@
   <view class="goods">
     <van-checkbox-group value="{{ checked }}" bind:change="onChangeChecked">
       <van-cell-group title="商品">
-        <van-cell title="{{item.name}}" wx:for="{{goods}}" use-label-slot data-name="{{item.sku_id}}" data-index="{{ index }}" bind:click="toggle" clickable>
+        <van-cell title="{{item.name}}" wx:key="key" wx:for="{{goods}}" use-label-slot data-name="{{item.sku_id}}" data-index="{{ index }}" bind:click="toggle" clickable>
           <view slot="icon">
             <van-image width="4rem" height="4rem" src="{{item.mainImage}}" />
           </view>
