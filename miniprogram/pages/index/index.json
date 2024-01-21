@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "divider": "/components/divider/index"
+  },
+  "enablePullDownRefresh": false
+}

@@ -1,0 +1,32 @@
+/* pages/my/index.wxss */
+
+.info {
+  background-color: #001938;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  width: 100;
+  margin: 20rpx;
+  border: 1rpx solid #f6f8fa;
+  border-radius: 30rpx;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  height: 300rpx;
+}
+
+.avatar-wrapper {
+  background-color: #001938;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.nickname {
+  font-size: 1.2em;
+}
+.menus {
+  margin-top: 20rpx;
+}
+van-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

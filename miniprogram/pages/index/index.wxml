@@ -1,0 +1,17 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="top">
+  </view>
+  <van-tabs active="{{ active }}" bind:change="onChange">
+    <van-tab title="实用工具">
+      <view class="content">
+        <van-grid border="{{ false }}" animated swipeable custom-class="grid" clickable>
+          <van-grid-item text-class="grid-item-text" wx:for="{{ tools }}" url="{{ item.url }}" icon="{{ item.icon }}" text="{{ item.title }}"/>
+        </van-grid>
+      </view>
+    </van-tab>
+    <van-tab title="信息查询"></van-tab>
+    <van-tab title="其他"></van-tab>
+  </van-tabs>
+  <divider/>
+</view>

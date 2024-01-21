@@ -1,0 +1,9 @@
+<form bindsubmit="formSubmit">
+  <van-cell-group title="设置token">
+    <van-field custom-class="custom" input-class="input" type="textarea"  bindblur="bindTextAreaBlur" value="{{token}}" rows="0" clearable autosize/>
+  </van-cell-group>
+  <view class="submit">
+    <van-button color="#001938" block round formType="submit">确定</van-button>
+  </view>
+</form>
+<van-toast id="van-toast" />

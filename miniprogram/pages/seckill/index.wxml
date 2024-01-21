@@ -1,0 +1,37 @@
+<view class="container">
+  <view class="setting">
+    <van-cell-group title="设置">
+      <van-cell title="设置token" is-link url="/pages/seckill/token/index" value-class="value-class" value="{{token}}" />
+      <van-cell title="收货地址" is-link bind:tap="changeAddress" value-class="value-class" value="{{address}}" />
+    </van-cell-group>
+    <van-cell-group title="个人信息">
+      <van-cell title="会员名" value-class="value-class" value="{{nick_name}}" />
+      <van-cell title="积分" value-class="value-class" value="{{currentScoreSum}}" />
+    </van-cell-group>
+  </view>
+  <view class="goods">
+    <van-checkbox-group value="{{ checked }}" bind:change="onChangeChecked">
+      <van-cell-group title="商品">
+        <van-cell title="{{item.name}}" wx:for="{{goods}}" use-label-slot data-name="{{item.sku_id}}" data-index="{{ index }}" bind:click="toggle" clickable>
+          <view slot="icon">
+            <van-image width="4rem" height="4rem" src="{{item.mainImage}}" />
+          </view>
+          <view slot="label">
+            <text>积分：{{item.point}}</text>
+          </view>
+          <view slot="right-icon" class="right-icon">
+            <van-checkbox catch:tap="noop" class="checkboxes-{{ index }}" name="{{ item.sku_id }}" />
+          </view>
+        </van-cell>
+      </van-cell-group>
+    </van-checkbox-group>
+  </view>
+  <view class="submit">
+    <van-button color="#001938" round block bind:click="exchange" >立即兑换</van-button>
+  </view>
+
+  <van-popup show="{{ showPopup }}" round position="bottom">
+    <van-picker show-toolbar title="选择地址" columns="{{ addressArray }}" bind:confirm="onConfirmAddress" bind:cancel="onCancelAddress" />
+  </van-popup>
+
+</view>

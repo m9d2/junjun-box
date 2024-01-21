@@ -1,0 +1,15 @@
+<view class="container">
+  <view class="info">
+    <button class="avatar-wrapper" open-type="chooseAvatar" bind:chooseavatar="onChooseAvatar">
+      <van-image round width="5rem" height="5rem" src="{{avatarUrl}}" />
+    </button>
+    <view class="nickname">
+      <input type="nickname" model:value="{{nickName}}" bindnicknamereview="onChangeNickname"/>
+    </view>
+  </view>
+  <view class="menus">
+    <van-cell title="我的记账" icon="records-o" url="/pages/my/seckill/index" is-link />
+    <van-cell title="我的抢购" icon="clock-o" url="/pages/my/seckill/index" is-link />
+    <van-cell title="版本" icon="info-o" value="2.0.0"/>
+  </view>
+</view>

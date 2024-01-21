@@ -1,0 +1,24 @@
+/* pages/seckill/index.wxss */
+.goods {
+  padding: 20rpx 0;
+}
+
+.submit {
+  margin: 24rpx;
+}
+
+.right-icon {
+  display: flex;
+  align-items: center;
+}
+van-image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.value-class {
+  font-size: 0.7rem;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

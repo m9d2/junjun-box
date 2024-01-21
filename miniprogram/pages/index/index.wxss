@@ -1,0 +1,17 @@
+/**index.wxss**/
+.top {
+  background-color: #001938;
+  height: 120rpx;
+}
+.content {
+  margin: 20rpx;
+  border: 1rpx solid #f6f8fa;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+.grid {
+  padding: 40rpx;
+}
+.grid-item-text {
+  color: red;
+  font-size: 30px;
+}

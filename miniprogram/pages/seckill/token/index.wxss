@@ -1,0 +1,12 @@
+textarea {
+  height: 200rpx;
+  padding: 20rpx;
+}
+.submit {
+  padding: 20rpx;
+}
+.custom {
+}
+.input {
+  height: 100%;
+}

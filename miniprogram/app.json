@@ -1,0 +1,63 @@
+{
+  "pages": [
+    "pages/index/index",
+    "components/divider/index",
+    "pages/accounting/index",
+    "pages/seckill/index",
+    "pages/seckill/token/index",
+    "pages/my/index",
+    "pages/my/seckill/index"
+  ],
+  "tabBar": {
+    "selectedColor": "#001938",
+    "borderStyle": "black",
+    "color": "#cdcdcd",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "/image/tabBar/首页.png",
+        "selectedIconPath": "/image/tabBar/首页-select.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/my/index",
+        "text": "我的",
+        "iconPath": "/image/tabBar/我的.png",
+        "selectedIconPath": "/image/tabBar/我的-select.png"
+      }
+    ]
+  },
+  "window": {
+    "navigationBarTextStyle": "white",
+    "navigationStyle": "default",
+    "navigationBarBackgroundColor": "#001938",
+    "navigationBarTitleText": "君君百宝箱"
+  },
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-tab": "@vant/weapp/tab/index",
+    "van-tabs": "@vant/weapp/tabs/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index",
+    "van-image": "@vant/weapp/image/index",
+    "van-card": "@vant/weapp/card/index",
+    "van-picker": "@vant/weapp/picker/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "van-tag": "@vant/weapp/tag/index",
+    "van-checkbox": "@vant/weapp/checkbox/index",
+    "van-checkbox-group": "@vant/weapp/checkbox-group/index",
+    "van-empty": "@vant/weapp/empty/index"
+  },
+  "rendererOptions": {},
+  "componentFramework": "glass-easel",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}
